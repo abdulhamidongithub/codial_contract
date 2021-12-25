@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 from shartnoma.models import Student
 from .serializers import *
@@ -6,7 +7,7 @@ from .serializers import *
 class StudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-
+    filter_backends = [SearchFilter,]
 class UstozViewSet(ModelViewSet):
     queryset = Ustoz.objects.all()
     serializer_class = UstozSerializer
