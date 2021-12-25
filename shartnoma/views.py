@@ -8,6 +8,7 @@ class StudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     filter_backends = [SearchFilter,]
+    search_fields = ["ism", "id", "familiya", "jins", "tel1", "tel2"]
 class UstozViewSet(ModelViewSet):
     queryset = Ustoz.objects.all()
     serializer_class = UstozSerializer
