@@ -1,3 +1,24 @@
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from shartnoma.models import Student
+from .serializers import *
 
-# Create your views here.
+class StudentViewSet(ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+class UstozViewSet(ModelViewSet):
+    queryset = Ustoz.objects.all()
+    serializer_class = UstozSerializer
+
+class KursViewSet(ModelViewSet):
+    queryset = Kurs.objects.all()
+    serializer_class = KursSerializer
+
+class ShartnomaViewSet(ModelViewSet):
+    queryset = Shartnoma.objects.all()
+    serializer_class = ShartnomaSerializer
+
+
+
+
