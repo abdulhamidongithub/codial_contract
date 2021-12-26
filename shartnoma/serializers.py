@@ -18,6 +18,9 @@ class KursSerializer(ModelSerializer):
         fields = "__all__"
 
 class ShartnomaSerializer(ModelSerializer):
+    ustoz = UstozSerializer()
+    kurs = KursSerializer()
+    student = StudentSerializer()
     class Meta:
         model = Shartnoma
         fields = "__all__"
